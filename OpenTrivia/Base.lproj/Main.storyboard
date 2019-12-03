@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cities-->
+        <scene sceneID="IC3-cf-EKa">
+            <objects>
+                <viewController storyboardIdentifier="CitiesMapViewController" id="YJL-Bi-HoF" customClass="CitiesMapViewController" customModule="VIPER_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gpv-1i-SWQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BAl-Yf-VpQ">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YJL-Bi-HoF" id="5AU-L5-bYo"/>
+                                </connections>
+                            </mapView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Lb6-sd-OOK">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BAl-Yf-VpQ" firstAttribute="leading" secondItem="VMT-oG-ufi" secondAttribute="leading" id="2Hq-tC-SvR"/>
+                            <constraint firstItem="Lb6-sd-OOK" firstAttribute="centerX" secondItem="Gpv-1i-SWQ" secondAttribute="centerX" id="8s5-T5-K7W"/>
+                            <constraint firstItem="VMT-oG-ufi" firstAttribute="bottom" secondItem="BAl-Yf-VpQ" secondAttribute="bottom" id="B9d-kE-CVh"/>
+                            <constraint firstItem="BAl-Yf-VpQ" firstAttribute="top" secondItem="VMT-oG-ufi" secondAttribute="top" id="E9b-jW-kJd"/>
+                            <constraint firstItem="Lb6-sd-OOK" firstAttribute="centerY" secondItem="Gpv-1i-SWQ" secondAttribute="centerY" id="c0q-Zb-d0o"/>
+                            <constraint firstItem="BAl-Yf-VpQ" firstAttribute="trailing" secondItem="VMT-oG-ufi" secondAttribute="trailing" id="nhp-QP-HCq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VMT-oG-ufi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cities" id="rTk-CI-XoJ"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Lb6-sd-OOK" id="bIm-mf-Oa8"/>
+                        <outlet property="mapView" destination="BAl-Yf-VpQ" id="aq0-Vq-osz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mE8-qG-oIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448.80000000000001" y="-188.45577211394306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6dZ-MQ-TwP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a69-uj-Xob" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bJC-bf-tCb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YJL-Bi-HoF" kind="relationship" relationship="rootViewController" id="nPg-PE-RpJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nNZ-v3-TdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490.39999999999998" y="-188.45577211394306"/>
+        </scene>
+    </scenes>
+</document>
