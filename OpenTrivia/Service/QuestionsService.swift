@@ -13,9 +13,8 @@ class QuestionsServices {
     
     // MARK: - Function
     
-    internal func executeForcastDetail(latitude: Double, longitude: Double,
-                                       completionHandler: @escaping (DataResponse<QuestionResponseModel>) -> ()) {
-        let route = APIRouter.forecast(latitudes: latitude, longitude: longitude)
+    internal func executeQuestions(amount: Int? = nil, category: Int? = nil, difficulty: QuestionModelDifficulty? = nil, type: QuestionModelType? = nil, completionHandler: @escaping (DataResponse<QuestionResponseModel>) -> ()) {
+        let route = APIRouter.questions(amount: amount, category: category, difficulty: difficulty, type: type)
 
         APIClient.performGet(route: route) { (handler: DataResponse<QuestionResponseModel>) in
             completionHandler(handler)

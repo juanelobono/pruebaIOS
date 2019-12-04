@@ -13,8 +13,8 @@ class GameInteractor: GameInteractorInput {
     weak var output: GameInteractorOutput!
     let services = QuestionsServices()
 
-    func getQuestions(latitude: Double, longitude: Double) {
-        services.executeForcastDetail(latitude: latitude, longitude: longitude) { response in
+    func getQuestions() {
+        services.executeQuestions() { response in
             if let response = response.result.value {
                 self.output?.onResponse(response: response)
             } else {

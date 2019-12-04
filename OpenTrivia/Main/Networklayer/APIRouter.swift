@@ -10,15 +10,12 @@ import Alamofire
 import Foundation
 
 enum APIRouter: URLRequestConvertible {
-    case questions(amount: Int, category: Int, difficulty: String, type: String)
-    case forecast(latitudes: Double, longitude: Double)
+    case questions(amount: Int? = 20, category: Int?, difficulty: QuestionModelDifficulty?, type: QuestionModelType?)
     
     // MARK: - HTTPMethod
     
     private var method: HTTPMethod {
         switch self {
-        case .forecast:
-            return .get
         case .questions:
         return .get
         }
@@ -28,10 +25,8 @@ enum APIRouter: URLRequestConvertible {
     
     private var path: String {
         switch self {
-        case .forecast(let latitude, let longitude):
-            return "forecast/" + Environment.production.secretKey + "\(latitude),\(longitude)"
         case .questions(let amount, let category, let difficulty, let type):
-            return "?amount=20&category=15&difficulty=easy&type=multiple"
+            return "?amount=\(String(describing: amount))&category=\(String(describing: category))&difficulty=\(String(describing: difficulty?.rawValue))&type=\(String(describing: type?.rawValue))"
         }
     }
     
@@ -39,8 +34,6 @@ enum APIRouter: URLRequestConvertible {
     
     private var parameters: Parameters? {
         switch self {
-        case .forecast:
-            return nil
         case .questions:
             return nil
         }

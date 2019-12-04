@@ -15,11 +15,6 @@ target 'OpenTrivia' do
   pod 'MaterialComponents/Buttons+Theming'
   pod 'MaterialComponents/BottomSheet'
   pod 'MaterialComponents/BottomSheet+ShapeThemer'
-  pod 'MaterialComponents/Chips'
-  pod 'MaterialComponents/Chips+Theming'
-  pod 'MaterialComponents/Chips+ColorThemer'
-  pod 'MaterialComponents/Chips+TypographyThemer'
-  pod 'MaterialComponents/Chips+ShapeThemer'
   pod 'MaterialComponents/Ink'
   pod 'MaterialComponents/Ripple'
 

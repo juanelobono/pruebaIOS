@@ -13,7 +13,12 @@ class GamePresenter: GameModuleInput, GameViewOutput, GameInteractorOutput {
     var router: GameRouterInput!
 
     func viewIsReady() {
+        view.setupInitialState()
+    }
 
+    func getQuestions() {
+        view?.showLoader()
+        interactor.getQuestions()
     }
 
     func onResponse(response: QuestionResponseModel) {

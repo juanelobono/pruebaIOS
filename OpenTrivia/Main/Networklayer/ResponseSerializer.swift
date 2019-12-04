@@ -24,6 +24,8 @@ extension DataRequest {
                 return .failure(error!)
             }
 
+            debugPrint(result)
+
             // (1)- Json Decoder. Decodes the data object into expected type T
             // throws error when failes
 

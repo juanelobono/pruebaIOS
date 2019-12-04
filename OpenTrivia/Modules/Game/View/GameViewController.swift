@@ -34,6 +34,12 @@ class GameViewController: BaseViewController, GameViewInput {
     }
 
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.getQuestions()
+    }
+
+
     // MARK: CategoryViewInput
     func setupInitialState() {
     }

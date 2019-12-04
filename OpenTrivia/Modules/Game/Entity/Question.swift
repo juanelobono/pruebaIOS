@@ -8,6 +8,17 @@
 
 import Foundation
 
+enum QuestionModelType: String {
+    case multiple
+    case boolean
+}
+
+enum QuestionModelDifficulty: String {
+    case easy
+    case medium
+    case hard
+}
+
 struct QuestionModel: Codable {
     
     let category: String?
@@ -16,6 +27,25 @@ struct QuestionModel: Codable {
     let question: String?
     let correctAnswer: String?
     let incorrectAnswers: [String]?
+
+    var typeIdentifier: QuestionModelType? {
+        get {
+            if let type = self.type {
+                return QuestionModelType(rawValue: type)
+            }
+            return nil
+        }
+    }
+
+    var difficultyIdentifier: QuestionModelDifficulty? {
+        get {
+            if let difficulty = self.difficulty {
+                return QuestionModelDifficulty(rawValue: difficulty)
+            }
+            return nil
+        }
+    }
+
 
     enum CodingKeys: String, CodingKey {
         case category
