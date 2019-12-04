@@ -6,7 +6,7 @@
 //  Copyright © 2019 Nexo Soluciones. All rights reserved.
 //
 
-protocol CategoryViewInput: class {
+protocol GameViewInput: class {
 
     /**
         @author Nexo Soluciones
@@ -14,4 +14,8 @@ protocol CategoryViewInput: class {
     */
 
     func setupInitialState()
+    func showLoader()
+    func hideLoader()
+    func onResponse(response: QuestionResponseModel)
+    func onFailure(error: Error)
 }

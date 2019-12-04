@@ -8,16 +8,16 @@
 
 import UIKit
 
-class CategoryViewController: BaseViewController, CategoryViewInput {
-
-    var output: CategoryViewOutput!
+class GameViewController: BaseViewController, GameViewInput {
+    
+    var output: GameViewOutput!
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate let viewModel = GameViewModel()
 
     // MARK: Properties
 
-    var presenter: CategoryPresenter?
+    var presenter: GamePresenter?
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -36,5 +36,25 @@ class CategoryViewController: BaseViewController, CategoryViewInput {
 
     // MARK: CategoryViewInput
     func setupInitialState() {
+    }
+    
+    func showLoader() {
+        
+    }
+    
+    func hideLoader() {
+        
+    }
+    
+    func onResponse(response: QuestionResponseModel) {
+        
+        if let questions = response.questions {
+            
+            print("Response ---> \(questions)")
+        }
+    }
+    
+    func onFailure(error: Error) {
+        
     }
 }

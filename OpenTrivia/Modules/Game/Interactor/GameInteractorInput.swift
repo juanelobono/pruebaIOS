@@ -1,11 +1,13 @@
 //
-//  CategoryCategoryModuleInput.swift
+//  CategoryCategoryInteractorInput.swift
 //  OpenTrivia
 //
 //  Created by Nexo Soluciones on 02/12/2019.
 //  Copyright © 2019 Nexo Soluciones. All rights reserved.
 //
 
-protocol CategoryModuleInput: class {
+import Foundation
+
+protocol GameInteractorInput {
 
 }

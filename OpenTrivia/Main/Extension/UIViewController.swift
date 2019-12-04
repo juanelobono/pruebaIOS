@@ -18,7 +18,7 @@ extension UIViewController {
     }
 
     enum AppStoryboard: String {
-        case Category
+        case Game
         case ForecastDetail
 
         var instance: UIStoryboard {

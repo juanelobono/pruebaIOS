@@ -8,24 +8,24 @@
 
 import UIKit
 
-class CategoryModuleConfigurator {
+class GameModuleConfigurator {
 
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
 
-        if let viewController = viewInput as? CategoryViewController {
+        if let viewController = viewInput as? GameViewController {
             configure(viewController: viewController)
         }
     }
 
-    private func configure(viewController: CategoryViewController) {
+    private func configure(viewController: GameViewController) {
 
-        let router = CategoryRouter()
+        let router = GameRouter()
 
-        let presenter = CategoryPresenter()
+        let presenter = GamePresenter()
         presenter.view = viewController
         presenter.router = router
 
-        let interactor = CategoryInteractor()
+        let interactor = GameInteractor()
         interactor.output = presenter
 
         presenter.interactor = interactor

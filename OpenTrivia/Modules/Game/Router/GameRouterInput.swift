@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CategoryRouterInput {
+protocol GameRouterInput {
 
 }

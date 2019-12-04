@@ -8,14 +8,14 @@
 
 import UIKit
 
-class CategoryModuleInitializer: NSObject {
+class GameModuleInitializer: NSObject {
 
     //Connect with object on storyboard
-    @IBOutlet weak var categoryViewController: CategoryViewController!
+    @IBOutlet weak var categoryViewController: GameViewController!
 
     override func awakeFromNib() {
 
-        let configurator = CategoryModuleConfigurator()
+        let configurator = GameModuleConfigurator()
         configurator.configureModuleForViewInput(viewInput: categoryViewController)
     }
 

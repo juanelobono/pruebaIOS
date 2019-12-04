@@ -11,7 +11,7 @@
         <!--Trivia Game-->
         <scene sceneID="CUf-OL-7Ck">
             <objects>
-                <viewController storyboardIdentifier="CategoryViewController" id="VQs-5q-EPQ" customClass="CategoryViewController" customModule="OpenTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryViewController" id="VQs-5q-EPQ" customClass="GameViewController" customModule="OpenTrivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ViS-jY-sme">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

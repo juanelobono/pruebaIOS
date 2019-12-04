@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate : ApplicationContract{
     func setupApplicationRoot() {
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: CategoryRouter.setupModule())
+        window?.rootViewController = UINavigationController(rootViewController: GameRouter.setupModule())
     }
 }
 

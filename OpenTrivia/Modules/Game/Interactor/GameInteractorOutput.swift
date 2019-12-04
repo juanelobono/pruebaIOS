@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol CategoryInteractorOutput: class {
+protocol GameInteractorOutput: class {
 
+    func onResponse(response: QuestionResponseModel)
+    func onFailure(error: Error)
 }

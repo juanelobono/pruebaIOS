@@ -6,7 +6,7 @@
 //  Copyright © 2019 Nexo Soluciones. All rights reserved.
 //
 
-protocol CategoryViewOutput {
+protocol GameViewOutput {
 
     /**
         @author Nexo Soluciones
@@ -15,6 +15,6 @@ protocol CategoryViewOutput {
 
     func viewIsReady()
 
-    func onResponse(response: CategoryResponseModel)
+    func onResponse(response: QuestionResponseModel)
     func onFailure(error: Error)
 }

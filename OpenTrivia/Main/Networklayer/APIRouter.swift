@@ -10,48 +10,55 @@ import Alamofire
 import Foundation
 
 enum APIRouter: URLRequestConvertible {
-    case category
-
+    case questions(amount: Int, category: Int, difficulty: String, type: String)
+    case forecast(latitudes: Double, longitude: Double)
+    
     // MARK: - HTTPMethod
-
+    
     private var method: HTTPMethod {
         switch self {
-        case .category:
+        case .forecast:
             return .get
+        case .questions:
+        return .get
         }
     }
-
+    
     // MARK: - Path
-
+    
     private var path: String {
         switch self {
-        case .category:
-            return "api_category.php"
+        case .forecast(let latitude, let longitude):
+            return "forecast/" + Environment.production.secretKey + "\(latitude),\(longitude)"
+        case .questions(let amount, let category, let difficulty, let type):
+            return "?amount=20&category=15&difficulty=easy&type=multiple"
         }
     }
-
+    
     // MARK: - Parameters
-
+    
     private var parameters: Parameters? {
         switch self {
-        case .category:
+        case .forecast:
+            return nil
+        case .questions:
             return nil
         }
     }
-
+    
     // MARK: - URLRequestConvertible
-
+    
     func asURLRequest() throws -> URLRequest {
         let url = try Environment.production.baseURL.asURL()
-
+        
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
-
+        
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
-
+        
         // Common Headers
         urlRequest.allHTTPHeaderFields = Environment.production.headers
-
+        
         // Parameters
         if let parameters = parameters {
             do {
@@ -60,7 +67,7 @@ enum APIRouter: URLRequestConvertible {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-
+        
         return urlRequest
     }
 }

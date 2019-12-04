@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-class CategoryRouter: CategoryRouterInput {
+class GameRouter: GameRouterInput {
 
     weak var view: UIViewController?
 
-    static func setupModule() -> CategoryViewController {
-        let viewController = CategoryViewController.instantiate(fromAppStoryboard: .Category)
-        let presenter = CategoryPresenter()
-        let router = CategoryRouter()
-        let interactor = CategoryInteractor()
+    static func setupModule() -> GameViewController {
+        let viewController = GameViewController.instantiate(fromAppStoryboard: .Game)
+        let presenter = GamePresenter()
+        let router = GameRouter()
+        let interactor = GameInteractor()
 
         viewController.presenter = presenter
 
