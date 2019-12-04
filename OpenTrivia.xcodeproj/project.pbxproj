@@ -52,6 +52,8 @@
 		847CF1092398127600C4700D /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF1072398127600C4700D /* AnswerCell.swift */; };
 		847CF10A2398127600C4700D /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847CF1082398127600C4700D /* AnswerCell.xib */; };
 		847CF10D23982BD600C4700D /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF10C23982BD600C4700D /* QuestionsService.swift */; };
+		847CF10F239836EE00C4700D /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF10E239836EE00C4700D /* GameResultViewController.swift */; };
+		847CF11123983F5E00C4700D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF11023983F5E00C4700D /* WelcomeViewController.swift */; };
 		87BC200BA17C9339BE83DA3A /* CategoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4C44F4A31DA84566CAEBB /* CategoryInteractorTests.swift */; };
 		A90E1A407F997265E9F2BB38 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994F75136A2152C3C0DF5B0 /* GamePresenter.swift */; };
 		B6EE4AF39B3721054FE2E681 /* Pods_OpenTriviaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30408517AE633F0E0AF7D023 /* Pods_OpenTriviaTests.framework */; };
@@ -129,6 +131,8 @@
 		847CF1072398127600C4700D /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		847CF1082398127600C4700D /* AnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
 		847CF10C23982BD600C4700D /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
+		847CF10E239836EE00C4700D /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
+		847CF11023983F5E00C4700D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		861AA82D4471D414C62F24F9 /* Pods-OpenTrivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTrivia.debug.xcconfig"; path = "Target Support Files/Pods-OpenTrivia/Pods-OpenTrivia.debug.xcconfig"; sourceTree = "<group>"; };
 		8F5E76F6BDF329C57E2EB311 /* CategoryViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewTests.swift; sourceTree = "<group>"; };
 		B7A148618C85DC5F0A8066B2 /* Pods-OpenTrivia-OpenTriviaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTrivia-OpenTriviaUITests.debug.xcconfig"; path = "Target Support Files/Pods-OpenTrivia-OpenTriviaUITests/Pods-OpenTrivia-OpenTriviaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -443,6 +447,8 @@
 				C42B0742F173AEE82AF94D1B /* GameViewInput.swift */,
 				108D1676FDE0DD72A6D1C511 /* GameViewOutput.swift */,
 				0766B61926AA903524273C21 /* GameViewController.swift */,
+				847CF10E239836EE00C4700D /* GameResultViewController.swift */,
+				847CF11023983F5E00C4700D /* WelcomeViewController.swift */,
 				847CF0FD2398090A00C4700D /* GameViewModel.swift */,
 				847CF1032398115500C4700D /* PlayersInfoCell.swift */,
 				847CF0F5239802B100C4700D /* QuestionCell.swift */,
@@ -732,6 +738,7 @@
 				505157822395925B00E80D6E /* ApplicationContract.swift in Sources */,
 				847CF0FC2398044000C4700D /* Question.swift in Sources */,
 				505157892395933100E80D6E /* BaseButton.swift in Sources */,
+				847CF11123983F5E00C4700D /* WelcomeViewController.swift in Sources */,
 				5051578F239594C000E80D6E /* UIViewController.swift in Sources */,
 				50515793239594ED00E80D6E /* UITableView.swift in Sources */,
 				50515791239594DA00E80D6E /* UIView.swift in Sources */,
@@ -748,6 +755,7 @@
 				318123CD88D90080D4117BD5 /* GameModuleInput.swift in Sources */,
 				A90E1A407F997265E9F2BB38 /* GamePresenter.swift in Sources */,
 				70C4C6C66823B6537D0D31DF /* GameInteractorInput.swift in Sources */,
+				847CF10F239836EE00C4700D /* GameResultViewController.swift in Sources */,
 				39911A9E1D494DA8BDFDB0E1 /* GameInteractorOutput.swift in Sources */,
 				2A9D7A91CC9FC65EFA51C270 /* GameInteractor.swift in Sources */,
 				4C89DF8BB43743A77C15A14D /* GameRouterInput.swift in Sources */,
