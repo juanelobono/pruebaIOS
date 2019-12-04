@@ -19,7 +19,7 @@ class CategoryViewController: BaseViewController, CategoryViewInput {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.viewIsReady()
+        //output.viewIsReady()
     }
 
 

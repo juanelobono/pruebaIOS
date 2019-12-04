@@ -14,4 +14,7 @@ protocol CategoryViewOutput {
     */
 
     func viewIsReady()
+
+    func onResponse(response: CategoryResponseModel)
+    func onFailure(error: Error)
 }

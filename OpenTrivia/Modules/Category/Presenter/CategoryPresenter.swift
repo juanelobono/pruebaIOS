@@ -15,4 +15,12 @@ class CategoryPresenter: CategoryModuleInput, CategoryViewOutput, CategoryIntera
     func viewIsReady() {
 
     }
+
+    func onResponse(response: CategoryResponseModel) {
+
+    }
+
+    func onFailure(error: Error) {
+        
+    }
 }
