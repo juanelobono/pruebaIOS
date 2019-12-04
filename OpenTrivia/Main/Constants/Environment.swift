@@ -14,7 +14,7 @@ enum Environment {
     var baseURL: String {
         switch self {
         case .production:
-            return "https://opentdb.com/api.php"
+            return "https://opentdb.com/"
         }
     }
 

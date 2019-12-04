@@ -10,7 +10,7 @@ import Alamofire
 import Foundation
 
 enum APIRouter: URLRequestConvertible {
-    case questions(amount: Int? = 20, category: Int?, difficulty: QuestionModelDifficulty?, type: QuestionModelType?)
+    case questions(amount: Int?, category: Int?, difficulty: QuestionModelDifficulty?, type: QuestionModelType?)
     
     // MARK: - HTTPMethod
     
@@ -25,8 +25,10 @@ enum APIRouter: URLRequestConvertible {
     
     private var path: String {
         switch self {
-        case .questions(let amount, let category, let difficulty, let type):
-            return "?amount=\(String(describing: amount))&category=\(String(describing: category))&difficulty=\(String(describing: difficulty?.rawValue))&type=\(String(describing: type?.rawValue))"
+        case .questions:
+            return "api.php"
+
+            //return "?amount=\(String(describing: amount))&category=\(String(describing: category))&difficulty=\(String(describing: difficulty?.rawValue))&type=\(String(describing: type?.rawValue))"
         }
     }
     
@@ -34,8 +36,24 @@ enum APIRouter: URLRequestConvertible {
     
     private var parameters: Parameters? {
         switch self {
-        case .questions:
-            return nil
+        case .questions(let amount, let category, let difficulty, let type):
+
+            var parameters = [String: Any]()
+            parameters["amount"] = amount ?? 20
+
+            if let category = category {
+                parameters["category"] = category
+            }
+
+            if let difficulty = difficulty {
+                parameters["difficulty"] = difficulty.rawValue
+            }
+
+            if let type = type {
+                parameters["type"] = type.rawValue
+            }
+
+            return parameters
         }
     }
     
@@ -45,6 +63,8 @@ enum APIRouter: URLRequestConvertible {
         let url = try Environment.production.baseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+
+        debugPrint("REQUEST: \(urlRequest)")
         
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
