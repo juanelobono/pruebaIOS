@@ -11,6 +11,9 @@ import UIKit
 class CategoryViewController: BaseViewController, CategoryViewInput {
 
     var output: CategoryViewOutput!
+    
+    @IBOutlet weak var tableView: UITableView!
+    fileprivate let viewModel = GameViewModel()
 
     // MARK: Properties
 
@@ -19,7 +22,15 @@ class CategoryViewController: BaseViewController, CategoryViewInput {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //output.viewIsReady()
+        
+        tableView?.dataSource = viewModel
+
+        tableView?.estimatedRowHeight = 100
+        tableView?.rowHeight = UITableView.automaticDimension
+        
+        tableView?.register(PlayersInfoCell.nib, forCellReuseIdentifier: PlayersInfoCell.identifier)
+        tableView?.register(QuestionCell.nib, forCellReuseIdentifier: QuestionCell.identifier)
+        tableView?.register(AnswerCell.nib, forCellReuseIdentifier: AnswerCell.identifier)
     }
 
 
