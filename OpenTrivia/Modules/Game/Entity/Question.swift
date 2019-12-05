@@ -63,7 +63,7 @@ struct QuestionModel: Codable {
         difficulty = try values.decodeIfPresent(String.self, forKey: .difficulty)
         question = try values.decodeIfPresent(String.self, forKey: .question)
         correctAnswer = try values.decodeIfPresent(String.self, forKey: .correctAnswer)
-        incorrectAnswers = try values.decodeIfPresent([String].self, forKey: .correctAnswer)
+        incorrectAnswers = try values.decodeIfPresent([String].self, forKey: .incorrectAnswers)
     }
     
     func getAnswers() -> [String]? {

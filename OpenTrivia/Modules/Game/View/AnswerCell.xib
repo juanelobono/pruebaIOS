@@ -28,6 +28,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="DLd-qH-1GR" firstAttribute="leading" secondItem="RuK-g8-sUF" secondAttribute="leading" constant="20" id="FZV-V6-XQn"/>
                             <constraint firstAttribute="trailing" secondItem="DLd-qH-1GR" secondAttribute="trailing" constant="20" id="GHv-NP-ZFx"/>
@@ -45,6 +46,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Uhu-SC-Z4h"/>
             <connections>
+                <outlet property="answerCard" destination="RuK-g8-sUF" id="9oN-LL-psu"/>
                 <outlet property="answerLabel" destination="DLd-qH-1GR" id="RuD-6g-dLh"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="168.41517857142856"/>

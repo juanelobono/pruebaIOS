@@ -17,7 +17,7 @@ enum APIRouter: URLRequestConvertible {
     private var method: HTTPMethod {
         switch self {
         case .questions:
-        return .get
+        return .post
         }
     }
     

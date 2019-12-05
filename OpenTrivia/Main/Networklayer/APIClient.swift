@@ -18,11 +18,12 @@ class APIClient{
     ///   - action: service end point
     ///   - completionHandler: generic call back completion handler
     class func performGet<T: Decodable>(route: APIRouter, completionHandler: @escaping (DataResponse<T>) -> ()) {
-        debugPrint("Route: \(route)")
-        Alamofire.request(route).responseObject { (response) in
+        Alamofire.request("https://opentdb.com/api.php?amount=20",
+        method: .post,
+        parameters: [:],
+        encoding: URLEncoding(destination: .queryString),
+        headers: Environment.production.headers).responseObject { (response) in
             completionHandler(response)
         }
     }
-
-
 }

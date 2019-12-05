@@ -23,38 +23,10 @@ protocol GameViewModelItem {
 
 class GameViewModel: NSObject {
     var items = [GameViewModelItem]()
+    weak var delegate : AnswerSelectedDelegate?
     
     override init() {
         super.init()
-        
-        //Players info
-        let playersInfo = PlayersInfo()
-        playersInfo.playerOneName = "Leo"
-        playersInfo.playerOneScore = 1
-        playersInfo.playerTwoName = "Molu"
-        playersInfo.playerTwoScore = 1
-        
-        //Create question
-        let question = "In Grand Theft Auto V, what was Michael De Santa's former surname?"
-        
-        //Create answers
-        var answers: [String] = []
-        
-        answers.append("Townley")
-        answers.append("De Santos")
-        answers.append("Watson")
-        answers.append("Simpsons")
-        
-        let playerItem = GameViewModelPlayersItem(playersInfo: playersInfo)
-        items.append(playerItem)
-        
-        let questionItem = GameViewModelQuestionItem(question: question)
-        items.append(questionItem)
-        
-        if !answers.isEmpty {
-            let answersItem = GameViewModelAnswersItem(answers: answers)
-            items.append(answersItem)
-        }
     }
 }
 
@@ -86,6 +58,7 @@ extension GameViewModel: UITableViewDataSource {
         case .answers:
             if let item = item as? GameViewModelAnswersItem, let cell = tableView.dequeueReusableCell(withIdentifier: AnswerCell.identifier, for: indexPath) as? AnswerCell {
                 cell.item = item.answers[indexPath.row]
+                cell.delegate = self
                 return cell
             }
         }
@@ -95,6 +68,21 @@ extension GameViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return items[section].sectionTitle
     }
+}
+
+extension GameViewModel : AnswerCellDelegate {
+    
+    func answerSelected(_ answerSelected: AnswerCell, answer: String) {
+        
+        if let delegate = delegate {
+            
+            delegate.answerSelected(self, answer: answer)
+        }
+    }
+}
+
+protocol AnswerSelectedDelegate: AnyObject {
+  func answerSelected(_ answerSelected: GameViewModel, answer: String)
 }
 
 class GameViewModelPlayersItem: GameViewModelItem {
