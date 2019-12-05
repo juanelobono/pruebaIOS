@@ -43,6 +43,33 @@ class PlayersInfoCell: UITableViewCell {
             playerOneScore.text = "Score: \(playersInfo.playerOneScore)"
             playerTwoName.text = playersInfo.playerTwoName
             playerTwoScore.text = "Score: \(playersInfo.playerTwoScore)"
+            
+            if playersInfo.playerTurn == 1 {
+                
+                self.setCurrentTurn(view: playerOneName)
+                playerOneName.textColor = .red
+                playerTwoName.textColor = .black
+                
+            } else {
+                
+                self.setCurrentTurn(view: playerTwoName)
+                playerOneName.textColor = .black
+                playerTwoName.textColor = .red
+            }
+        }
+    }
+    
+    func setCurrentTurn(view: UIView) {
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            
+            view.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2) // Scale your image
+
+            }) { (finished) in
+                UIView.animate(withDuration: 1, animations: {
+
+                   view.transform = CGAffineTransform.identity // undo in 1 seconds
+                })
         }
     }
 }

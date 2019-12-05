@@ -77,9 +77,23 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
     
     func setPlayers() {
         
-        //Players info        
+        //Players info
+        self.setPlayerTurn()
+        
         let playerItem = GameViewModelPlayersItem(playersInfo: self.playersInfo!)
         viewModel.items.append(playerItem)
+    }
+    
+    func setPlayerTurn() {
+        
+        if questionIndex % 2 == 0 {
+                   
+           self.playersInfo!.playerTurn = 1
+           
+        } else {
+           
+           self.playersInfo!.playerTurn = 2
+        }
     }
     
     func setCurrentQuestion() {
@@ -87,7 +101,7 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
         //Create question
         let question = self.questions?[questionIndex].question ?? ""
         
-        let questionItem = GameViewModelQuestionItem(question: question)
+        let questionItem = GameViewModelQuestionItem(question: question, questionNumber: questionIndex + 1)
         viewModel.items.append(questionItem)
     }
     
@@ -159,12 +173,13 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
         
         viewModel.items.removeAll()
         
-        let playerItem = GameViewModelPlayersItem(playersInfo: self.playersInfo!)
-        viewModel.items.append(playerItem)
-        
         if self.questionIndex < 19 {
             
             self.questionIndex += 1
+            self.setPlayerTurn()
+                   
+            let playerItem = GameViewModelPlayersItem(playersInfo: self.playersInfo!)
+            viewModel.items.append(playerItem)
             self.setCurrentQuestion()
             self.setCurrentAnswers()
             
