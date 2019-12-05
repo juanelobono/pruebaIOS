@@ -11,6 +11,7 @@ import MaterialComponents
 
 class GameResultViewController: UIViewController {
     
+    @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var playerOneNameLabel: UILabel!
     @IBOutlet weak var playerOneScoreLabel: UILabel!
     @IBOutlet weak var playerTwoNameLabel: UILabel!
@@ -30,6 +31,19 @@ class GameResultViewController: UIViewController {
     }
     
     func setupResult() {
+        
+        if playersInfo.playerOneScore > playersInfo.playerTwoScore {
+            
+            winnerLabel.text = "The winner is: \(playersInfo.playerOneName)"
+            
+        } else if playersInfo.playerOneScore < playersInfo.playerTwoScore {
+            
+            winnerLabel.text = "The winner is: \(playersInfo.playerTwoName)"
+            
+        } else {
+            
+            winnerLabel.text = "Tied game"
+        }
         
         playerOneNameLabel.text = playersInfo.playerOneName
         playerOneScoreLabel.text = "Score: \(playersInfo.playerOneScore)"

@@ -26,7 +26,3 @@ width="600" height="250">
 
 * Run `generamba template install`. All the templates will be placed in the '/Templates' folder of your current project.
 
-# Viper
-
-[Inspiration with](URL "https://github.com/usman-pucit/VIPER_Swift")
-

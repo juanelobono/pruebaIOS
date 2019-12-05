@@ -134,7 +134,7 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
             
         } else {
             
-            title = "Incorrect answer!"
+            title = "Wrong answer!"
             let decodedAnswer = String(htmlEncodedString: correctAnswer)
             message = "The correct answer is: \(decodedAnswer)"
         }
