@@ -23,26 +23,26 @@ class CategoryModuleConfiguratorTests: XCTestCase {
     func testConfigureModuleForViewController() {
 
         //given
-        let viewController = CategoryViewControllerMock()
-        let configurator = CategoryModuleConfigurator()
+        let viewController = GameViewControllerMock()
+        let configurator = GameModuleConfigurator()
 
         //when
         configurator.configureModuleForViewInput(viewInput: viewController)
 
         //then
         XCTAssertNotNil(viewController.output, "CategoryViewController is nil after configuration")
-        XCTAssertTrue(viewController.output is CategoryPresenter, "output is not CategoryPresenter")
+        XCTAssertTrue(viewController.output is GamePresenter, "output is not CategoryPresenter")
 
-        let presenter: CategoryPresenter = viewController.output as! CategoryPresenter
+        let presenter: GamePresenter = viewController.output as! GamePresenter
         XCTAssertNotNil(presenter.view, "view in CategoryPresenter is nil after configuration")
         XCTAssertNotNil(presenter.router, "router in CategoryPresenter is nil after configuration")
-        XCTAssertTrue(presenter.router is CategoryRouter, "router is not CategoryRouter")
+        XCTAssertTrue(presenter.router is GameRouter, "router is not CategoryRouter")
 
-        let interactor: CategoryInteractor = presenter.interactor as! CategoryInteractor
+        let interactor: GameInteractor = presenter.interactor as! GameInteractor
         XCTAssertNotNil(interactor.output, "output in CategoryInteractor is nil after configuration")
     }
 
-    class CategoryViewControllerMock: CategoryViewController {
+    class GameViewControllerMock: GameViewController {
 
         var setupInitialStateDidCall = false
 

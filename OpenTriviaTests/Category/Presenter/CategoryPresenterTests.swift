@@ -20,18 +20,38 @@ class CategoryPresenterTest: XCTestCase {
         super.tearDown()
     }
 
-    class MockInteractor: CategoryInteractorInput {
+    class MockInteractor: GameInteractorInput {
+        func getQuestions() {
+            
+        }
+
 
     }
 
-    class MockRouter: CategoryRouterInput {
+    class MockRouter: GameRouterInput {
 
     }
 
-    class MockViewController: CategoryViewInput {
-
+    class MockViewController: GameViewInput {
         func setupInitialState() {
+            
+        }
+
+        func showLoader() {
 
         }
+
+        func hideLoader() {
+
+        }
+
+        func onResponse(response: QuestionResponseModel) {
+
+        }
+
+        func onFailure(error: Error) {
+
+        }
+
     }
 }
