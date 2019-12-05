@@ -13,7 +13,7 @@ class QuestionsServices {
     
     // MARK: - Function
     
-    internal func executeQuestions(amount: Int? = nil, category: Int? = nil, difficulty: QuestionModelDifficulty? = nil, type: QuestionModelType? = nil, completionHandler: @escaping (DataResponse<QuestionResponseModel>) -> ()) {
+    internal func executeQuestions(amount: Int = 20, category: Int? = nil, difficulty: QuestionModelDifficulty? = nil, type: QuestionModelType? = nil, completionHandler: @escaping (DataResponse<QuestionResponseModel>) -> ()) {
         let route = APIRouter.questions(amount: amount, category: category, difficulty: difficulty, type: type)
 
         APIClient.performGet(route: route) { (handler: DataResponse<QuestionResponseModel>) in

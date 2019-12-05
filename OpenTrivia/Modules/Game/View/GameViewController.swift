@@ -57,8 +57,6 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
         
         if let questions = response.questions {
             
-            print("Response ---> \(questions)")
-            
             self.questions = questions
             
             self.setPlayers()

@@ -35,6 +35,7 @@
 		5051578F239594C000E80D6E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5051578E239594C000E80D6E /* UIViewController.swift */; };
 		50515791239594DA00E80D6E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50515790239594DA00E80D6E /* UIView.swift */; };
 		50515793239594ED00E80D6E /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50515792239594ED00E80D6E /* UITableView.swift */; };
+		508E4C9A23998FDA0067E176 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E4C9923998FDA0067E176 /* SessionManager.swift */; };
 		50B4271523985446006C2F3E /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B4271423985446006C2F3E /* Game.storyboard */; };
 		5656D5A71B2B875BECDD2D01 /* CategoryConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA594C1E7E2FA39C35A75502 /* CategoryConfiguratorTests.swift */; };
 		6FB39875FE12E2184DBFA8EE /* CategoryRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1C1AA941F1F806DF074A91 /* CategoryRouterTests.swift */; };
@@ -116,6 +117,7 @@
 		5051578E239594C000E80D6E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		50515790239594DA00E80D6E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		50515792239594ED00E80D6E /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		508E4C9923998FDA0067E176 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		50B4271423985446006C2F3E /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		53D4C44F4A31DA84566CAEBB /* CategoryInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractorTests.swift; sourceTree = "<group>"; };
 		6737A3708CC7055E164FF922 /* GameInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameInteractorInput.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				504B1FBE2395ABF300372D17 /* APIClient.swift */,
 				504B1FC02395AC1E00372D17 /* APIRouter.swift */,
 				504B1FC22395AE0700372D17 /* ResponseSerializer.swift */,
+				508E4C9923998FDA0067E176 /* SessionManager.swift */,
 			);
 			path = Networklayer;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				5045D8372396F78F003C28A9 /* CategoryResponseModel.swift in Sources */,
 				504B1FC12395AC1E00372D17 /* APIRouter.swift in Sources */,
 				318123CD88D90080D4117BD5 /* GameModuleInput.swift in Sources */,
+				508E4C9A23998FDA0067E176 /* SessionManager.swift in Sources */,
 				A90E1A407F997265E9F2BB38 /* GamePresenter.swift in Sources */,
 				70C4C6C66823B6537D0D31DF /* GameInteractorInput.swift in Sources */,
 				847CF10F239836EE00C4700D /* GameResultViewController.swift in Sources */,
