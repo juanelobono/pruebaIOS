@@ -31,7 +31,7 @@ class QuestionCell: UITableViewCell {
             return
         }
             
-            questionLabel.text = item.question
+            questionLabel.text = String(htmlEncodedString: item.question)
         }
     }
     

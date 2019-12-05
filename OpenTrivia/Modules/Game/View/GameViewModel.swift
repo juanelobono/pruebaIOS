@@ -111,7 +111,7 @@ class GameViewModelQuestionItem: GameViewModelItem {
     }
     
     var sectionTitle: String {
-        return ""
+        return "Question"
     }
     
     var rowCount: Int {
@@ -131,7 +131,7 @@ class GameViewModelAnswersItem: GameViewModelItem {
     }
     
     var sectionTitle: String {
-        return ""
+        return "Answers"
     }
     
     var rowCount: Int {

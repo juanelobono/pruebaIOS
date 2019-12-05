@@ -34,7 +34,7 @@ class AnswerCell: UITableViewCell {
     var item: String?  {
         didSet {
             
-            answerLabel.text = item
+            answerLabel.text = String(htmlEncodedString: item ?? "")
         }
     }
     

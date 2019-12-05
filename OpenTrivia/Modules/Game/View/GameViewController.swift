@@ -12,8 +12,10 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
     
     var output: GameViewOutput!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     fileprivate let viewModel = GameViewModel()
+    var playersInfo: PlayersInfo? = nil
     var questions: [QuestionModel]? = nil
     var questionIndex = 0
 
@@ -46,11 +48,11 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
     }
     
     func showLoader() {
-        
+        activityIndicator.startAnimating()
     }
     
     func hideLoader() {
-        
+        activityIndicator.stopAnimating()
     }
     
     func onResponse(response: QuestionResponseModel) {
@@ -75,14 +77,8 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
     
     func setPlayers() {
         
-        //Players info
-        let playersInfo = PlayersInfo()
-        playersInfo.playerOneName = "Leo"
-        playersInfo.playerOneScore = 1
-        playersInfo.playerTwoName = "Molu"
-        playersInfo.playerTwoScore = 1
-        
-        let playerItem = GameViewModelPlayersItem(playersInfo: playersInfo)
+        //Players info        
+        let playerItem = GameViewModelPlayersItem(playersInfo: self.playersInfo!)
         viewModel.items.append(playerItem)
     }
     
@@ -107,22 +103,83 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
     }
     
     func answerSelected(_ answerSelected: GameViewModel, answer: String) {
-        // Show alert
-        let alert = UIAlertController(title: "Subscribed!", message: "Subscribed to \(answer)", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okAction)
-        
+
         print("Answer selected: \(answer)")
-        self.present(alert, animated: true, completion: nil)
+        self.checkAnswer(answer)
     }
     
-    func checkAnswer(answer: String) {
+    func checkAnswer(_ answer: String) {
         
         let correctAnswer = self.questions?[questionIndex].correctAnswer ?? ""
+        var title = ""
+        var message = ""
         
         if correctAnswer == answer {
             
+            title = "Correct answer!"
+            message = "You scored a point!"
+            self.updateScore()
             
+        } else {
+            
+            title = "Incorrect answer!"
+            let decodedAnswer = String(htmlEncodedString: correctAnswer)
+            message = "The correct answer is: \(decodedAnswer)"
         }
+        
+        self.showAlert(title, message)
+    }
+    
+    func updateScore() {
+        
+        if questionIndex % 2 == 0 {
+            
+            self.playersInfo?.playerOneScore = self.playersInfo!.playerOneScore + 1
+            
+        } else {
+            
+            self.playersInfo?.playerTwoScore = self.playersInfo!.playerTwoScore + 1
+        }
+    }
+    
+    func showAlert(_ title: String, _ message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default,  handler: { action in
+
+            self.setupNewQuestion()
+        })
+        
+        alert.addAction(okAction)
+       
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func setupNewQuestion() {
+        
+        viewModel.items.removeAll()
+        
+        let playerItem = GameViewModelPlayersItem(playersInfo: self.playersInfo!)
+        viewModel.items.append(playerItem)
+        
+        if self.questionIndex < 19 {
+            
+            self.questionIndex += 1
+            self.setCurrentQuestion()
+            self.setCurrentAnswers()
+            
+            tableView?.reloadData()
+            
+        } else {
+            
+            //Go to result
+            performSegue(withIdentifier: "showResult", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationVC = segue.destination as? GameResultViewController
+        destinationVC?.playersInfo = self.playersInfo
     }
 }
