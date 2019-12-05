@@ -57,8 +57,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 @available(iOS 13.0, *)
 extension SceneDelegate: ApplicationContract {
     func setupApplicationRoot() {
+        
         window?.makeKeyAndVisible()
-        let viewController = GameRouter.setupModule()
+        let viewController = WelcomeViewController.instantiate(fromAppStoryboard: .Game)
         window?.rootViewController = UINavigationController(rootViewController: viewController)
     }
 }

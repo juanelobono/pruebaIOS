@@ -55,6 +55,8 @@
 		847CF10D23982BD600C4700D /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF10C23982BD600C4700D /* QuestionsService.swift */; };
 		847CF10F239836EE00C4700D /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF10E239836EE00C4700D /* GameResultViewController.swift */; };
 		847CF11123983F5E00C4700D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF11023983F5E00C4700D /* WelcomeViewController.swift */; };
+		847CF11323997A1500C4700D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF11223997A1400C4700D /* String.swift */; };
+		847CF11523997CCE00C4700D /* MDCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CF11423997CCE00C4700D /* MDCButton.swift */; };
 		87BC200BA17C9339BE83DA3A /* CategoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D4C44F4A31DA84566CAEBB /* CategoryInteractorTests.swift */; };
 		A90E1A407F997265E9F2BB38 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994F75136A2152C3C0DF5B0 /* GamePresenter.swift */; };
 		B6EE4AF39B3721054FE2E681 /* Pods_OpenTriviaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30408517AE633F0E0AF7D023 /* Pods_OpenTriviaTests.framework */; };
@@ -135,6 +137,8 @@
 		847CF10C23982BD600C4700D /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
 		847CF10E239836EE00C4700D /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		847CF11023983F5E00C4700D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		847CF11223997A1400C4700D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		847CF11423997CCE00C4700D /* MDCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCButton.swift; sourceTree = "<group>"; };
 		861AA82D4471D414C62F24F9 /* Pods-OpenTrivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTrivia.debug.xcconfig"; path = "Target Support Files/Pods-OpenTrivia/Pods-OpenTrivia.debug.xcconfig"; sourceTree = "<group>"; };
 		8F5E76F6BDF329C57E2EB311 /* CategoryViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewTests.swift; sourceTree = "<group>"; };
 		B7A148618C85DC5F0A8066B2 /* Pods-OpenTrivia-OpenTriviaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTrivia-OpenTriviaUITests.debug.xcconfig"; path = "Target Support Files/Pods-OpenTrivia-OpenTriviaUITests/Pods-OpenTrivia-OpenTriviaUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +405,8 @@
 				50515790239594DA00E80D6E /* UIView.swift */,
 				50515792239594ED00E80D6E /* UITableView.swift */,
 				847CF101239810C800C4700D /* UITableViewCell.swift */,
+				847CF11223997A1400C4700D /* String.swift */,
+				847CF11423997CCE00C4700D /* MDCButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -760,6 +766,7 @@
 				A90E1A407F997265E9F2BB38 /* GamePresenter.swift in Sources */,
 				70C4C6C66823B6537D0D31DF /* GameInteractorInput.swift in Sources */,
 				847CF10F239836EE00C4700D /* GameResultViewController.swift in Sources */,
+				847CF11323997A1500C4700D /* String.swift in Sources */,
 				39911A9E1D494DA8BDFDB0E1 /* GameInteractorOutput.swift in Sources */,
 				2A9D7A91CC9FC65EFA51C270 /* GameInteractor.swift in Sources */,
 				4C89DF8BB43743A77C15A14D /* GameRouterInput.swift in Sources */,
@@ -768,6 +775,7 @@
 				847CF1052398115500C4700D /* PlayersInfoCell.swift in Sources */,
 				15405EB78F67C53150686E29 /* CategoryConfigurator.swift in Sources */,
 				504B1FBF2395ABF300372D17 /* APIClient.swift in Sources */,
+				847CF11523997CCE00C4700D /* MDCButton.swift in Sources */,
 				F9FB10D2922526C7CB3088F0 /* CategoryInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

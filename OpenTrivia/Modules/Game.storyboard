@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yhf-Wf-uWu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yhf-Wf-uWu">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4640" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,13 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-HC-Czr">
-                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="color" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i56-f5-wxQ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dqF-ri-eCr">
@@ -35,6 +30,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-HC-Czr">
+                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -49,23 +49,25 @@
                     </view>
                     <navigationItem key="navigationItem" title="Trivia Game" id="Hqs-FM-7x9"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Yez-HC-Czr" id="8pv-8Z-S1R"/>
                         <outlet property="tableView" destination="i56-f5-wxQ" id="jee-Tu-kUI"/>
+                        <segue destination="kSH-0w-wJf" kind="presentation" identifier="showResult" modalPresentationStyle="fullScreen" id="0LN-Lp-LQK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0I-F7-07T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447.82608695652175" y="-188.83928571428569"/>
+            <point key="canvasLocation" x="551" y="-190"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Welcome to Trivia Game-->
         <scene sceneID="YvN-XT-W5V">
             <objects>
-                <viewController id="Pz7-ZA-fRM" customClass="WelcomeViewController" customModule="OpenTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="Pz7-ZA-fRM" customClass="WelcomeViewController" customModule="OpenTrivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VOT-Ue-LXt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qr0-Wm-cbF">
-                                <rect key="frame" x="20" y="64" width="374" height="336"/>
+                                <rect key="frame" x="20" y="160" width="374" height="270"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgB-Mx-Aot">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -74,14 +76,8 @@
                                             <constraint firstAttribute="height" constant="50" id="Lo0-TX-mS3"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Trivia Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZ2-mq-D5u">
-                                        <rect key="frame" x="0.0" y="80" width="374" height="36"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player one name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jv0-ae-7Ha">
-                                        <rect key="frame" x="0.0" y="146" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="80" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="DLE-7W-T1f"/>
                                         </constraints>
@@ -89,15 +85,15 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player two name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjE-iP-xN0">
-                                        <rect key="frame" x="0.0" y="216" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="150" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="uiw-YC-8tj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffg-hs-7CX">
-                                        <rect key="frame" x="0.0" y="286" width="374" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffg-hs-7CX" customClass="MDCButton">
+                                        <rect key="frame" x="0.0" y="220" width="374" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="rwf-T5-aIT"/>
                                         </constraints>
@@ -110,10 +106,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xjE-iP-xN0" secondAttribute="trailing" id="303-UH-Fzj"/>
                                     <constraint firstItem="ffg-hs-7CX" firstAttribute="centerX" secondItem="qr0-Wm-cbF" secondAttribute="centerX" id="5je-GM-w8L"/>
-                                    <constraint firstAttribute="trailing" secondItem="zZ2-mq-D5u" secondAttribute="trailing" id="EhE-cx-ayP"/>
                                     <constraint firstItem="xjE-iP-xN0" firstAttribute="leading" secondItem="qr0-Wm-cbF" secondAttribute="leading" id="FXD-2g-RuR"/>
                                     <constraint firstItem="jv0-ae-7Ha" firstAttribute="leading" secondItem="qr0-Wm-cbF" secondAttribute="leading" id="MFr-46-cWw"/>
-                                    <constraint firstItem="zZ2-mq-D5u" firstAttribute="leading" secondItem="qr0-Wm-cbF" secondAttribute="leading" id="TkX-w3-Vmx"/>
                                     <constraint firstAttribute="trailing" secondItem="jv0-ae-7Ha" secondAttribute="trailing" id="VAJ-Mh-8dJ"/>
                                     <constraint firstItem="JgB-Mx-Aot" firstAttribute="leading" secondItem="qr0-Wm-cbF" secondAttribute="leading" id="kTn-ch-vrS"/>
                                     <constraint firstAttribute="trailing" secondItem="JgB-Mx-Aot" secondAttribute="trailing" id="xdH-Le-KaQ"/>
@@ -128,14 +122,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hqR-YM-1aj"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Welcome to Trivia Game" id="GOC-At-tnR"/>
                     <connections>
+                        <outlet property="playButton" destination="ffg-hs-7CX" id="3kY-e4-686"/>
                         <outlet property="playerOneTextField" destination="jv0-ae-7Ha" id="8qk-5f-3C2"/>
                         <outlet property="playerTwoTextField" destination="xjE-iP-xN0" id="HxV-L6-i0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l7-hx-CGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="537"/>
+            <point key="canvasLocation" x="-288" y="-190"/>
         </scene>
         <!--Game Result View Controller-->
         <scene sceneID="vgt-tA-nZv">
@@ -233,7 +229,7 @@
                                                                     <constraint firstAttribute="height" constant="50" id="6qc-tH-ZUV"/>
                                                                     <constraint firstAttribute="width" constant="150" id="Qwi-ZT-LpH"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Button"/>
+                                                                <state key="normal" title="Play again!"/>
                                                                 <connections>
                                                                     <action selector="doneButtonTapped:" destination="kSH-0w-wJf" eventType="touchUpInside" id="4Yo-u2-rhv"/>
                                                                 </connections>
@@ -291,7 +287,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zWL-Xi-jF1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QTp-ku-cAI"/>
                     <connections>
+                        <outlet property="playAgainButton" destination="4mQ-kB-o4T" id="YSE-SW-MpP"/>
                         <outlet property="playerOneNameLabel" destination="liW-sD-iMM" id="NbM-da-BEQ"/>
                         <outlet property="playerOneScoreLabel" destination="LKl-aS-5YG" id="oan-6f-mem"/>
                         <outlet property="playerTwoNameLabel" destination="2sg-U2-Keh" id="dHv-Dz-hxA"/>
@@ -300,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUn-qP-EXq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683" y="-179"/>
+            <point key="canvasLocation" x="1445" y="-190"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jmb-Tu-I2r">
@@ -313,12 +311,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="VQs-5q-EPQ" kind="relationship" relationship="rootViewController" id="ST1-L3-2tF"/>
+                        <segue destination="Pz7-ZA-fRM" kind="relationship" relationship="rootViewController" id="y0a-S3-aCS"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfa-nk-Fm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-490.39999999999998" y="-188.45577211394306"/>
+            <point key="canvasLocation" x="-1081" y="-190"/>
         </scene>
     </scenes>
     <resources>
