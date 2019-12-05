@@ -111,17 +111,19 @@ class GameViewModelQuestionItem: GameViewModelItem {
     }
     
     var sectionTitle: String {
-        return "Question"
+        return "Question \(questionNumber) of 20"
     }
     
     var rowCount: Int {
         return 1
     }
     
+    var questionNumber: Int
     var question: String
     
-    init(question: String) {
+    init(question: String, questionNumber: Int) {
         self.question = question
+        self.questionNumber = questionNumber
     }
 }
 

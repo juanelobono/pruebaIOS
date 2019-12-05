@@ -10,8 +10,9 @@ import Foundation
 
 class PlayersInfo {
 
-    var playerOneName: String = ""
+    var playerOneName: String = "Player one"
     var playerOneScore: Int = 0
-    var playerTwoName: String = ""
+    var playerTwoName: String = "Player two"
     var playerTwoScore: Int = 0
+    var playerTurn: Int = 1
 }

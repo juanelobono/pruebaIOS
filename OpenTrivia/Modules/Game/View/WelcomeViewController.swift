@@ -36,8 +36,16 @@ class WelcomeViewController: UIViewController {
     func setPlayerInfo() {
         
         self.playersInfo = PlayersInfo()
-        self.playersInfo.playerOneName = playerOneTextField.text ?? "Player one"
-        self.playersInfo.playerTwoName = playerTwoTextField.text ?? "Player two"
+        
+        if let playerOne = playerOneTextField.text {
+            
+            self.playersInfo.playerOneName = !playerOne.isEmpty ? playerOne : "Player one"
+        }
+        
+        if let playerTwo = playerTwoTextField.text {
+            
+            self.playersInfo.playerTwoName = !playerTwo.isEmpty ? playerTwo : "Player two"
+        }
     }
     
     func goToGame() {
