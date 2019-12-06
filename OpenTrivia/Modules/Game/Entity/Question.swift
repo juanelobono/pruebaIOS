@@ -68,8 +68,6 @@ struct QuestionModel: Codable {
     
     func getAnswers() -> [String]? {
         
-        // TODO Hacer que agregue la respuesta correcta en una posición random
-        
         var answers: [String] = []
         
         if let incorrectAnswers = self.incorrectAnswers {
@@ -85,6 +83,6 @@ struct QuestionModel: Codable {
             }
         }
         
-        return answers
+        return answers.shuffled()
     }
 }
