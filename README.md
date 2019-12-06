@@ -10,7 +10,7 @@ Proyecto realizado respetando los patrones de diseño y las mejores prácticas d
 # Workflow Diagram:
 
 <p align="center">
-  <img width="700" height="550" src="https://github.com/usman-pucit/VIPER_Swift/blob/developer/images/bpM7t.png">
+  <img width="700" height="400" src="https://github.com/usman-pucit/VIPER_Swift/blob/developer/images/bpM7t.png">
 </p>
 
 ## Comenzando 🚀
