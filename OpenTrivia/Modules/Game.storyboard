@@ -36,7 +36,6 @@
                                 <color key="color" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Yez-HC-Czr" firstAttribute="centerX" secondItem="ViS-jY-sme" secondAttribute="centerX" id="8z7-bq-Hhb"/>
                             <constraint firstItem="i56-f5-wxQ" firstAttribute="bottom" secondItem="Yyt-bB-la7" secondAttribute="bottom" id="IYK-ab-h92"/>
@@ -329,7 +328,6 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="uRV-9E-99k"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="65P-AY-wm0" firstAttribute="trailing" secondItem="zWL-Xi-jF1" secondAttribute="trailing" id="0lD-5r-MD9"/>
                             <constraint firstItem="65P-AY-wm0" firstAttribute="leading" secondItem="zWL-Xi-jF1" secondAttribute="leading" id="5KP-VC-kH3"/>
