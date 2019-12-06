@@ -48,12 +48,20 @@ class PlayersInfoCell: UITableViewCell {
                 
                 self.setCurrentTurn(view: playerOneName)
                 playerOneName.textColor = .red
-                playerTwoName.textColor = .black
+                if #available(iOS 13.0, *) {
+                    playerTwoName.textColor = .label
+                } else {
+                    playerTwoName.textColor = .black
+                }
                 
             } else {
                 
                 self.setCurrentTurn(view: playerTwoName)
-                playerOneName.textColor = .black
+                if #available(iOS 13.0, *) {
+                    playerOneName.textColor = .label
+                } else {
+                    playerOneName.textColor = .black
+                }
                 playerTwoName.textColor = .red
             }
         }

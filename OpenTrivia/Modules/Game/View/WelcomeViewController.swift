@@ -15,6 +15,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var playerOneTextField: UITextField!
     @IBOutlet weak var playerTwoTextField: UITextField!
     @IBOutlet weak var playButton: MDCButton!
+    @IBOutlet weak var previousMatchesButton: MDCButton!
+    
     
     var playersInfo: PlayersInfo!
     var containerScheme = MDCContainerScheme()
@@ -24,18 +26,25 @@ class WelcomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         playButton.setButtonStyle(containerScheme)
+        previousMatchesButton.setButtonStyle(containerScheme)
     }
     
     @IBAction func playButtonTapped(_ sender: Any) {
         
         self.setPlayerInfo()
         self.goToGame()
+    }
+    
+    @IBAction func previousMatchesTapped(_ sender: Any) {
         
+        //Go to previous matches
+        performSegue(withIdentifier: "showPreviousMatches", sender: nil)
     }
     
     func setPlayerInfo() {
         
-        self.playersInfo = PlayersInfo()
+        self.playersInfo = PlayersInfo(entity: PlayersInfoRealm())
+        self.playersInfo.id = self.currentTimeMillis()
         
         if let playerOne = playerOneTextField.text {
             
@@ -54,5 +63,11 @@ class WelcomeViewController: UIViewController {
         viewController.modalPresentationStyle = .fullScreen
         viewController.playersInfo = self.playersInfo
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func currentTimeMillis() -> Int64 {
+        
+        let nowDouble = NSDate().timeIntervalSince1970
+        return Int64(nowDouble * 1000)
     }
 }

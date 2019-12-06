@@ -104,6 +104,11 @@ PODS:
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
+  - Realm (4.1.1):
+    - Realm/Headers (= 4.1.1)
+  - Realm/Headers (4.1.1)
+  - RealmSwift (4.1.1):
+    - Realm (= 4.1.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -115,6 +120,7 @@ DEPENDENCIES:
   - MaterialComponents/Ink
   - MaterialComponents/Ripple
   - MaterialComponents/TextFields
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
@@ -122,13 +128,17 @@ SPEC REPOS:
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   MaterialComponents: 3ee5327e02dc3f34df48c68205b5fd7dce171744
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
+  RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
 
-PODFILE CHECKSUM: 30a2e5eb819b711a73b0c1c05368921f63ea2f39
+PODFILE CHECKSUM: 778153eb76db0cc8b229f3e230cf600926807ca7
 
 COCOAPODS: 1.8.4

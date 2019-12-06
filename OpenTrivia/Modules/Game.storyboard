@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qr0-Wm-cbF">
-                                <rect key="frame" x="20" y="160" width="374" height="270"/>
+                                <rect key="frame" x="20" y="160" width="374" height="350"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgB-Mx-Aot">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -102,10 +102,22 @@
                                             <action selector="playButtonTapped:" destination="Pz7-ZA-fRM" eventType="touchUpInside" id="Nyz-Rb-nWF"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozu-6q-1VN" customClass="MDCButton">
+                                        <rect key="frame" x="0.0" y="300" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="oFO-8V-vuY"/>
+                                        </constraints>
+                                        <state key="normal" title="See previous matches"/>
+                                        <connections>
+                                            <action selector="previousMatchesTapped:" destination="Pz7-ZA-fRM" eventType="touchUpInside" id="8jj-Yi-A33"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xjE-iP-xN0" secondAttribute="trailing" id="303-UH-Fzj"/>
+                                    <constraint firstItem="Ozu-6q-1VN" firstAttribute="leading" secondItem="qr0-Wm-cbF" secondAttribute="leading" id="4bV-aQ-EHL"/>
                                     <constraint firstItem="ffg-hs-7CX" firstAttribute="centerX" secondItem="qr0-Wm-cbF" secondAttribute="centerX" id="5je-GM-w8L"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ozu-6q-1VN" secondAttribute="trailing" id="7Mq-4h-trd"/>
                                     <constraint firstItem="xjE-iP-xN0" firstAttribute="leading" secondItem="qr0-Wm-cbF" secondAttribute="leading" id="FXD-2g-RuR"/>
                                     <constraint firstItem="jv0-ae-7Ha" firstAttribute="leading" secondItem="qr0-Wm-cbF" secondAttribute="leading" id="MFr-46-cWw"/>
                                     <constraint firstAttribute="trailing" secondItem="jv0-ae-7Ha" secondAttribute="trailing" id="VAJ-Mh-8dJ"/>
@@ -127,11 +139,44 @@
                         <outlet property="playButton" destination="ffg-hs-7CX" id="3kY-e4-686"/>
                         <outlet property="playerOneTextField" destination="jv0-ae-7Ha" id="8qk-5f-3C2"/>
                         <outlet property="playerTwoTextField" destination="xjE-iP-xN0" id="HxV-L6-i0D"/>
+                        <outlet property="previousMatchesButton" destination="Ozu-6q-1VN" id="rFs-wq-sXS"/>
+                        <segue destination="Lkv-mC-zdp" kind="show" identifier="showPreviousMatches" id="6ze-J4-urf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l7-hx-CGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-288" y="-190"/>
+        </scene>
+        <!--Previous Matches View Controller-->
+        <scene sceneID="nZj-xt-aFQ">
+            <objects>
+                <viewController id="Lkv-mC-zdp" customClass="PreviousMatchesViewController" customModule="OpenTrivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YdG-U4-Cyh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iy2-Tn-1MJ">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Iy2-Tn-1MJ" firstAttribute="leading" secondItem="iRE-lI-H4K" secondAttribute="leading" id="6TY-7Z-HSb"/>
+                            <constraint firstItem="Iy2-Tn-1MJ" firstAttribute="top" secondItem="iRE-lI-H4K" secondAttribute="top" id="9HK-ez-Guc"/>
+                            <constraint firstItem="iRE-lI-H4K" firstAttribute="trailing" secondItem="Iy2-Tn-1MJ" secondAttribute="trailing" id="MIV-nS-Mfg"/>
+                            <constraint firstItem="iRE-lI-H4K" firstAttribute="bottom" secondItem="Iy2-Tn-1MJ" secondAttribute="bottom" id="oFf-zq-XTV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iRE-lI-H4K"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sCW-EN-uGM"/>
+                    <connections>
+                        <outlet property="tableView" destination="Iy2-Tn-1MJ" id="4iu-jH-f4P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nmM-cN-B0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-288" y="556"/>
         </scene>
         <!--Game Result View Controller-->
         <scene sceneID="vgt-tA-nZv">

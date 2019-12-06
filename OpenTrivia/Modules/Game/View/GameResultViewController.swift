@@ -49,6 +49,23 @@ class GameResultViewController: UIViewController {
         playerOneScoreLabel.text = "Score: \(playersInfo.playerOneScore)"
         playerTwoNameLabel.text = playersInfo.playerTwoName
         playerTwoScoreLabel.text = "Score: \(playersInfo.playerTwoScore)"
+        
+        self.savePlayersInfo()
+    }
+    
+    func savePlayersInfo() {
+        
+        do {
+            let repository = RealmService<PlayersInfoRealm>()
+            try repository.save(item: self.playersInfo!)
+            
+            let matches = repository.fetchAll()
+            print("Matches count: \(matches.count)")
+            
+        } catch let error {
+            
+            print(error.localizedDescription)
+        }
     }
 
     @IBAction func doneButtonTapped(_ sender: Any) {

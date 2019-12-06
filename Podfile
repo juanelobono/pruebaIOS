@@ -6,7 +6,12 @@ target 'OpenTrivia' do
   use_frameworks!
 
   # Pods for OpenTrivia
+  
+  # Alamofire
   pod 'Alamofire'
+  
+  # Realm
+  pod 'RealmSwift'
   
   # Material
   pod 'MaterialComponents/TextFields'

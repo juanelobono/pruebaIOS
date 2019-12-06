@@ -18,6 +18,10 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
     var playersInfo: PlayersInfo? = nil
     var questions: [QuestionModel]? = nil
     var questionIndex = 0
+    
+    struct Constants {
+        static let maxIndex: Int = 19
+    }
 
     // MARK: Properties
 
@@ -171,7 +175,7 @@ class GameViewController: BaseViewController, GameViewInput, AnswerSelectedDeleg
         
         viewModel.items.removeAll()
         
-        if self.questionIndex < 19 {
+        if self.questionIndex < Constants.maxIndex {
             
             self.questionIndex += 1
             self.setPlayerTurn()
