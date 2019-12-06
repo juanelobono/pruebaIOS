@@ -51,7 +51,7 @@ _Ejecuta run en XCode_
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia de [Nexo Soluciones. <p align="center"><img width="171" height="31" src="htthttp://www.nexosoluciones.com.ar/images/MiniLogo.png"></p>](https://http://www.nexosoluciones.com.ar/)
+Este proyecto está bajo la Licencia de [Nexo Soluciones. <p align="center"><img width="171" height="31" src="http://www.nexosoluciones.com.ar/images/MiniLogo.png"></p>](http://www.nexosoluciones.com.ar/)
 
 ## Expresiones de Gratitud 🎁
 
