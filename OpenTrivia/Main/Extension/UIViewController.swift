@@ -18,8 +18,7 @@ extension UIViewController {
     }
 
     enum AppStoryboard: String {
-        case Category
-        case ForecastDetail
+        case Game
 
         var instance: UIStoryboard {
             return UIStoryboard(name: rawValue, bundle: Bundle.main)

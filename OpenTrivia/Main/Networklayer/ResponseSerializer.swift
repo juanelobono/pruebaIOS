@@ -24,11 +24,14 @@ extension DataRequest {
                 return .failure(error!)
             }
 
+            debugPrint(result)
+
             // (1)- Json Decoder. Decodes the data object into expected type T
             // throws error when failes
 
             do {
                 let responseObject = try JSONDecoder().decode(T.self, from: jsonData)
+                debugPrint("RESPONSE:",  responseObject)
                 return .success(responseObject)
             } catch {
                 return .failure(error)
@@ -55,6 +58,7 @@ extension DataRequest {
                 return .failure(error!)
             }
 
+            debugPrint("RESPONSE:", responseArray)
             return .success(responseArray)
         }
         return response(responseSerializer: responseSerializer, completionHandler: completionHandler)

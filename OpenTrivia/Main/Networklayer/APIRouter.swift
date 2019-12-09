@@ -10,23 +10,23 @@ import Alamofire
 import Foundation
 
 enum APIRouter: URLRequestConvertible {
-    case category
-
+    case questions(amount: Int, category: Int?, difficulty: QuestionModelDifficulty?, type: QuestionModelType?)
+    
     // MARK: - HTTPMethod
-
+    
     private var method: HTTPMethod {
         switch self {
-        case .category:
-            return .get
+        case .questions:
+        return .get
         }
     }
-
+    
     // MARK: - Path
-
+    
     private var path: String {
         switch self {
-        case .category:
-            return "api_category.php"
+        case .questions:
+            return "api.php"
         }
     }
 
@@ -34,13 +34,29 @@ enum APIRouter: URLRequestConvertible {
 
     private var parameters: Parameters? {
         switch self {
-        case .category:
-            return nil
+        case .questions(let amount, let category, let difficulty, let type):
+
+            var parameters = [String: Any]()
+            parameters["amount"] = amount
+
+            if let category = category {
+                parameters["category"] = category
+            }
+
+            if let difficulty = difficulty {
+                parameters["difficulty"] = difficulty.rawValue
+            }
+
+            if let type = type {
+                parameters["type"] = type.rawValue
+            }
+
+            return parameters
         }
     }
-
+    
     // MARK: - URLRequestConvertible
-
+    
     func asURLRequest() throws -> URLRequest {
         let url = try Environment.production.baseURL.asURL()
 
@@ -48,20 +64,34 @@ enum APIRouter: URLRequestConvertible {
 
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
-
+        
         // Common Headers
-        urlRequest.allHTTPHeaderFields = Environment.production.headers
+        let headers = Environment.production.headers
+        urlRequest.allHTTPHeaderFields = headers
 
-        // Parameters
-        if let parameters = parameters {
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+        let urlEncoding = try URLEncoding.default.encode(urlRequest, with: (method == .get) ? parameters : nil)
+
+        debugPrint("---------------------")
+        debugPrint(method.rawValue, urlEncoding)
+        debugPrint("HEADER:", headers)
+
+        if method != .get {
+
+            // Parameters
+            if let parameters = parameters {
+                do {
+                    urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+
+                    debugPrint("BODY:", parameters)
+                } catch {
+                    throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
+                }
             }
         }
 
-        return urlRequest
+        debugPrint("---------------------")
+
+        return urlEncoding
     }
 }
 
