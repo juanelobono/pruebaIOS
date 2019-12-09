@@ -20,7 +20,15 @@ class CategoryInteractorTests: XCTestCase {
         super.tearDown()
     }
 
-    class MockPresenter: CategoryInteractorOutput {
+    class MockPresenter: GameInteractorOutput {
+        func onResponse(response: QuestionResponseModel) {
+
+        }
+
+        func onFailure(error: Error) {
+            
+        }
+
 
     }
 }
